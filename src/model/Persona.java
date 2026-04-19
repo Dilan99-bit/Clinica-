@@ -1,5 +1,54 @@
 package model;
 
-public class Persona {
+public abstract class Persona {
+    private String nombreCompleto ;
+    private  int edad;
+    private String cedula;
+    private String telefono;
+    
+    public Persona() {
+
+    }
+
+    public Persona(String nombreCompleto, int edad, String cedula, String telefono) {
+        this.nombreCompleto = nombreCompleto;
+        this.edad = edad;
+        this.cedula = cedula;
+        this.telefono = telefono;
+    }
+    
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+     public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        if (edad >= 0) {
+            this.edad = edad;
+        } else {
+            System.out.println("Error: La edad no puede ser negativa. Se asignará 0.");
+            this.edad = 0;
+        }
+    }
+    public String getcedula() {
+        return cedula;
+    }
+    public void setcedula(String cedula) {
+        this.cedula = cedula;
+    }
+    public String getTelefono() {
+        return telefono;
+    }
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public abstract void mostrarInformacion();
+    
     
 }

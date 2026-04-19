@@ -1,50 +1,51 @@
 package model;
 
-public class  Medico { 
+public class  Medico extends Persona implements Interface{ 
 
-    private int idMedico;
-    private String nombre;
-    private String especialidad;
+
+ private String especialidad;
 
  public Medico(){
-
+    super();
     }
-
-    public Medico(int idMedico, String nombre, String especialidad) {
-
-        this.idMedico = idMedico;
-        this.nombre = nombre;
+    
+    public Medico(String nombreCompleto, int edad, String cedula, String telefono, String especialidad) {
+        super(nombreCompleto, edad, cedula, telefono);
         this.especialidad = especialidad;
     }
 
-
-      public int getidMedico() {
-        return idMedico;
-    }
-
-    public void setIdMedico(int idMedico) {
-             this.idMedico = idMedico;
-        
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+   
 
     public String getEspecialidad() {
         return especialidad;
     }
 
-    public void setEstado(String especialidad) {
+    public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
-   
-    public String toString() {
-        return "medico [medico = " + idMedico + ", nombre =" + nombre + ", Espcialidad=" + especialidad;
 
+    
+  @Override
+    public void mostrarInformacion() {
+    System.out.println("====== DATOS DE LOS MEDICOS ======");
+    System.out.println("Nombre: " + getNombreCompleto());
+    System.out.println("Cédula: " + getcedula());
+    System.out.println("Edad: " + getEdad());
+    System.out.println("Teléfono: " + getTelefono());
+    System.out.println("Especialidad: " + this.especialidad);
+    System.out.println("================================");
+}
+
+  @Override
+    public void eliminar() {
+       System.out.println("El Medico se elimino correctamente");
     }
+
+   @Override
+    public void guardar() {
+        System.out.println("El Medico se guardo con exito");
+  
+    }
+    
+ 
  }
