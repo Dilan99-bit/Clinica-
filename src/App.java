@@ -51,7 +51,7 @@ public class App {
 
         do {
 
-            System.out.println("BIENVENIDO AL SISTEMA DE CITAS");
+            System.out.println("BIENVENIDO AL SISTEMA DE LA CLINICA");
             System.out.println("Por favor seleccione una opción");
             System.out.println("1.Registro paciente");
             System.out.println("2.Consutar medico");
@@ -59,6 +59,8 @@ public class App {
             System.out.println("4.Modulo Administrador");
             System.out.println("5.Consultar Cuota moderada");
             System.out.println("6. Salir");
+
+            System.out.println("=======================================================================");
 
             opcion = sc.nextInt();
 
@@ -75,6 +77,8 @@ public class App {
 
                         int elegir = sc.nextInt();
                         sc.nextLine();
+
+                        System.out.println("=======================================================================");
 
                         if (elegir == 1) {
                             System.out.print("Ingrese Nombre: ");
@@ -97,6 +101,8 @@ public class App {
 
                             listaPacientes.add(nuevoPaciente);
                             System.out.println("¡Paciente registrado con éxito!");
+
+                            System.out.println("========================================================================");
 
                         } else if (elegir == 2) {
                             if (listaPacientes.isEmpty()) {
@@ -132,6 +138,8 @@ public class App {
                         System.out.println("10) Gastroenterologia");
                         System.out.println("11) Cirugia General");
                         System.out.println("12) salir");
+
+                        System.out.println("==========================================================");
 
                         id = sc.nextInt();
                         sc.nextLine();
@@ -179,6 +187,7 @@ public class App {
                     break;
                 case 3:
                     System.out.println("Está en el apartado para registrar su cita");
+                    System.out.println("=============================================");
 
                     System.out.print("deme el id de su cita: ");
                     int idCita = sc.nextInt();
@@ -214,6 +223,7 @@ public class App {
                     int pool;
 
                     do {
+                       
                         System.out.println(
                                 "Bienvenido al sistema: Aqui podras asignar consultorios y var administradores");
                         System.out.println("1) Ver Administradores,medicos,Consultorios");
@@ -221,6 +231,7 @@ public class App {
                         System.out.println("3) Registrar un nuevo Administrador");
                         System.out.println("4) Gestionar consultorio");
                         System.out.println("5) salir");
+                        System.out.println("=======  =====================   ========================    ===================");
                         pool = sc.nextInt();
                         sc.nextLine();
 
@@ -233,6 +244,7 @@ public class App {
                                 System.out.println("3) Ver Consultorios");
                                 System.out.println("4) Volver");
                                 System.out.print("Seleccione: ");
+                                System.out.println("=======  ===============  ========  ========");
                                 caso = sc.nextInt();
                                 sc.nextLine();
                                 switch (caso) {
@@ -285,6 +297,8 @@ public class App {
                                 listaMedicos.add(nuevoMedico);
                                 System.out.println("¡Médico registrado con éxito!");
 
+                                System.out.println("========================       ===============================");
+
                                 break;
                             case 3:
                                 System.out.println("\n--- REGISTRO DE NUEVO ADMINISTRADOR ---");
@@ -303,6 +317,8 @@ public class App {
                               
                                 listaAdmins.add(new Administrador(nomA, edadA, cedA, telA, areaA, 0));
                                 System.out.println("¡Administrador registrado con éxito!");
+
+                                System.out.println("===================        ==================");
 
                                 break;
                             case 4:
