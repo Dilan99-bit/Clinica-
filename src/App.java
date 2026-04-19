@@ -359,14 +359,15 @@ public class App {
 
                     break;
                 case 5:
-                    ArrayList<Cuota> historialCuotas = new ArrayList<>();
+                    GestorCuota cuotasModeradoras = new GestorCuota();
                     String seguir;
                     int option = 0;
                     do {
                         System.out.println("¡Aquí podrás consultar tu cuota moderadora!");
                         System.out.println("1. Realizar consulta de cuota moderadora");
                         System.out.println("2. Historial de consultas");
-                        System.out.println("3. Salir");
+                        System.out.println("3. Elimiar registros");
+                        System.out.println("4. Salir");
                         option = sc.nextInt();
 
                         sc.nextLine();
@@ -374,33 +375,18 @@ public class App {
                             case 1:
                                 System.out.println("Consulta tu cuota moderadora");
                                 do {
-                                    System.out.println("Ingresa tu nombre");
-                                    String name = sc.nextLine();
-                                    System.out.println("Ingresa tu número de documento");
-                                    String doc = sc.nextLine();
-
-                                    System.out.println("Ingresa tu EPS (Sura, Salud total o particular)");
-                                    String tipoAfiliacion = sc.nextLine();
-
-                                    Cuota calculCuota = new Cuota(name, doc, tipoAfiliacion);
-                                    System.out.println("Aquí tienes tú información");
-                                    calculCuota.validarCuota();
-                                    historialCuotas.add(calculCuota);
-                                    calculCuota.cuotaModeradora();
-                                    System.out.println("Recuerda realizar tu pago en el punto de atención");
+                                    cuotasModeradoras.guardar();
                                     System.out.println("¿Desea realizar otra consulta? Si/No");
-                                    seguir = sc.next();
-                                    sc.nextLine();
+                                    seguir = sc.nextLine();
 
                                 } while (seguir.equalsIgnoreCase("Si"));
                                 break;
                             case 2:
-                                System.out.println("\n Historial de consultas");
-                                for (int i = 0; i < historialCuotas.size(); i++) {
-                                    System.out.println("Consulta # " + (i + 1));
-                                    historialCuotas.get(i).cuotaModeradora();
-                                }
+                                cuotasModeradoras.mostrarHistorial();
                                 break;
+                                case 3:
+                                    cuotasModeradoras.eliminar();
+                                    break;
 
                             default:
                                 System.out.println("Saliendo del sistema...");
@@ -408,7 +394,7 @@ public class App {
                                 break;
                         }
 
-                    } while (option != 3);
+                    } while (option != 4);
 
                     break;
                 case 6:
