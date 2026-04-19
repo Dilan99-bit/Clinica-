@@ -45,7 +45,9 @@ public class Consultorio {
    
     @Override
     public String toString() {
+        
         return "Consultorio [Numero = " + numConsultorio + ", Piso =" + pisoConsultorio + ", Estado=" + estado + "]";
+        
     }
 
     
