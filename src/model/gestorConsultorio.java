@@ -3,11 +3,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class gestorConsultorio {
+public class GestorConsultorio {
 
    private List<Consultorio> listaConsultorios = new ArrayList<>();
 
-    public gestorConsultorio(){
+    public GestorConsultorio(){
         
     }
     public void registrarConsultorio(Consultorio  c){
