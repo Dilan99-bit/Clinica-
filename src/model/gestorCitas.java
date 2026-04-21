@@ -1,11 +1,11 @@
 package model;
 import java.util.ArrayList;
 
-public class gestorCitas {
+public class GestorCitas {
    
     private ArrayList<Cita> listaCitas;
      
-    public gestorCitas(){
+    public GestorCitas(){
         listaCitas= new ArrayList<>();
     }
 

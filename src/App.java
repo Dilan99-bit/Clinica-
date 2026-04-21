@@ -45,7 +45,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
         gestorCitas gestor = new gestorCitas();
-        gestorConsultorio gestionConsultorio = new gestorConsultorio();
+        GestorConsultorio gestionConsultorio = new GestorConsultorio();
 
         int opcion;
 
