@@ -46,6 +46,11 @@ public class  Medico extends Persona implements Interface{
         System.out.println("El Medico se guardo con exito");
   
     }
+
+   @Override
+   public void mostrarHistorial() {
+    
+   }
     
  
  }
