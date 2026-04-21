@@ -13,14 +13,14 @@ public class App {
         listaMedicos.add(new Medico("Alberto Ruiz", 45, "1012569874", "3012569874", "Cardiología"));
         listaMedicos.add(new Medico("Elena Beltrán", 42, "1012587453", "3003236987", "Pediatría"));
         listaMedicos.add(new Medico("Isaac Newton", 35, "1236987405", "3105478963", "Neurología"));
-        listaMedicos.add(new Medico("Carlos Restrepo", 24, "5698741235", "3112365987", "Dermatologia"));
-        listaMedicos.add(new Medico("Andrés Montoya", 30, "4587456321", "3105874563", "Endocrinologia"));
-        listaMedicos.add(new Medico("Santiago Vélez", 47, "8563214752", "310589636", "Neumologia"));
-        listaMedicos.add(new Medico("Mateo Holguín", 28, "2569874136", "3168529631", "Infectologia"));
-        listaMedicos.add(new Medico("Iván Ramírez", 29, "145789631", "3141254789", "Psiquiatria"));
-        listaMedicos.add(new Medico("Sandra Arango", 41, "4569874526", "3105698712", "Hematologia"));
-        listaMedicos.add(new Medico("Ricardo Franco", 55, "5669755698", "3005896314", "Gastroenterologia"));
-        listaMedicos.add(new Medico("Claudia López", 39, "6666666666", "3017893215", "Cirugia General"));
+        listaMedicos.add(new Medico("Carlos Restrepo", 24, "5698741235", "3112365987", "Dermatología"));
+        listaMedicos.add(new Medico("Andrés Montoya", 30, "4587456321", "3105874563", "Endocrinología"));
+        listaMedicos.add(new Medico("Santiago Vélez", 47, "8563214752", "310589636", "Neumología"));
+        listaMedicos.add(new Medico("Mateo Holguín", 28, "2569874136", "3168529631", "Infectología"));
+        listaMedicos.add(new Medico("Iván Ramírez", 29, "145789631", "3141254789", "Psiquiatría"));
+        listaMedicos.add(new Medico("Sandra Arango", 41, "4569874526", "3105698712", "Hematología"));
+        listaMedicos.add(new Medico("Ricardo Franco", 55, "5669755698", "3005896314", "Gastroenterología"));
+        listaMedicos.add(new Medico("Claudia López", 39, "6666666666", "3017893215", "Cirugía General"));
 
         listaAdmins.add(new Administrador("Dilan Galvis", 25, "1000123456", "3128889900", "Gerencia", 3));
 
@@ -44,20 +44,20 @@ public class App {
         inicializarMedicos();
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
-        gestorCitas gestor = new gestorCitas();
-        gestorConsultorio gestionConsultorio = new gestorConsultorio();
+        GestorCitas gestor = new GestorCitas();
+        GestorConsultorio gestionConsultorio = new GestorConsultorio();
 
         int opcion;
 
         do {
 
-            System.out.println("BIENVENIDO AL SISTEMA DE LA CLINICA");
-            System.out.println("Por favor seleccione una opción");
-            System.out.println("1.Registro paciente");
-            System.out.println("2.Consutar medico");
-            System.out.println("3.Programar Cita");
-            System.out.println("4.Modulo Administrador");
-            System.out.println("5.Consultar Cuota moderada");
+            System.out.println("BIENVENIDO AL SISTEMA DE LA CLÍNICA");
+            System.out.println("Por favor, seleccione una opción");
+            System.out.println("1. Registro de paciente");
+            System.out.println("2. Consultar médico");
+            System.out.println("3. Programar cita");
+            System.out.println("4. Módulo administrador");
+            System.out.println("5. Consultar cuota moderada");
             System.out.println("6. Salir");
 
             System.out.println("=======================================================================");
@@ -70,8 +70,8 @@ public class App {
                     System.out.println("BIENVENIDO AL SISTEMA DE GESTIÓN DE PACIENTES");
 
                     while (!salir) {
-                        System.out.println("\n1. Registrar Paciente");
-                        System.out.println("2. Ver Lista de Pacientes");
+                        System.out.println("\n1. Registrar paciente");
+                        System.out.println("2. Ver lista de pacientes");
                         System.out.println("3. Salir");
                         System.out.print("Selecciona una opción: ");
 
@@ -88,10 +88,10 @@ public class App {
                             int edad = sc.nextInt();
                             sc.nextLine();
 
-                            System.out.print("Ingrese cedula: ");
+                            System.out.print("Ingrese cédula: ");
                             String cedula = sc.nextLine();
 
-                            System.out.println("Ingrese telefono");
+                            System.out.print("Ingrese teléfono: ");
                             String telefono = sc.nextLine();
 
                             System.out.print("Ingrese EPS: ");
@@ -113,31 +113,28 @@ public class App {
                                     p.mostrarInformacion();
                                 }
                             }
-
                         } else if (elegir == 3) {
                             salir = true;
-
                         }
-
                     }
                     break;
                 case 2:
                     int id;
                     do {
-                        System.out.println("Bienvenido al sitema de elecion de medico");
-                        System.out.println("En que área lo buscas");
+                        System.out.println("Bienvenido al sistema de elección de médico");
+                        System.out.println("¿En qué área lo buscas?");
                         System.out.println("1) Cardiología");
                         System.out.println("2) Pediatría");
                         System.out.println("3) Neurología");
-                        System.out.println("4) Dermatologia");
-                        System.out.println("5) Endocrinologia");
-                        System.out.println("6) Neumologia");
-                        System.out.println("7) Infectologia");
-                        System.out.println("8) Psiquiatria");
-                        System.out.println("9) Hematologia");
-                        System.out.println("10) Gastroenterologia");
-                        System.out.println("11) Cirugia General");
-                        System.out.println("12) salir");
+                        System.out.println("4) Dermatología");
+                        System.out.println("5) Endocrinología");
+                        System.out.println("6) Neumología");
+                        System.out.println("7) Infectología");
+                        System.out.println("8) Psiquiatría");
+                        System.out.println("9) Hematología");
+                        System.out.println("10) Gastroenterología");
+                        System.out.println("11) Cirugía General");
+                        System.out.println("12) Salir");
 
                         System.out.println("==========================================================");
 
@@ -152,24 +149,24 @@ public class App {
                         else if (id == 3)
                             busqueda = "Neurología";
                         else if (id == 4)
-                            busqueda = "Dermatologia";
+                            busqueda = "Dermatología";
                         else if (id == 5)
-                            busqueda = "Endocrinologia";
+                            busqueda = "Endocrinología";
                         else if (id == 6)
-                            busqueda = "Neumologia";
+                            busqueda = "Neumología";
                         else if (id == 7)
-                            busqueda = "Infectologia";
+                            busqueda = "Infectología";
                         else if (id == 8)
-                            busqueda = "Psiquiatria";
+                            busqueda = "Psiquiatría";
                         else if (id == 9)
-                            busqueda = "Hematologia";
+                            busqueda = "Hematología";
                         else if (id == 10)
-                            busqueda = "Gastroenterologia";
+                            busqueda = "Gastroenterología";
                         else if (id == 11)
-                            busqueda = "Cirugia General";
+                            busqueda = "Cirugía General";
 
                         if (id >= 1 && id <= 11) {
-                            System.out.println("Medicos Disponibles son :" + busqueda + ":");
+                            System.out.println("Los médicos disponibles son :" + busqueda + ":");
                             boolean encontro = false;
 
                             for (Medico m : listaMedicos) {
@@ -179,7 +176,7 @@ public class App {
                                 }
                             }
                             if (!encontro)
-                                System.out.println("No hay médicos en esta área.");
+                                System.out.println("No hay médicos disponibles en esta área.");
                         }
 
                     } while (id != 12);
@@ -225,10 +222,10 @@ public class App {
                     do {
                        
                         System.out.println(
-                                "Bienvenido al sistema: Aqui podras asignar consultorios y var administradores");
-                        System.out.println("1) Ver Administradores,medicos,Consultorios");
-                        System.out.println("2) Registrar un nuevo Medico");
-                        System.out.println("3) Registrar un nuevo Administrador");
+                                "Bienvenido al sistema: Aquí podrás asignar consultorios y ver administradores");
+                        System.out.println("1) Ver Administradores, médicos, consultorios");
+                        System.out.println("2) Registrar un nuevo médico");
+                        System.out.println("3) Registrar un nuevo administrador");
                         System.out.println("4) Gestionar consultorio");
                         System.out.println("5) salir");
                         System.out.println("=======  =====================   ========================    ===================");
@@ -239,9 +236,9 @@ public class App {
                             case 1:
                                 int caso;
                                 System.out.println("\n--- ¿QUÉ DESEA VISUALIZAR? ---");
-                                System.out.println("1) Ver Administradores");
-                                System.out.println("2) Ver Médicos");
-                                System.out.println("3) Ver Consultorios");
+                                System.out.println("1) Ver administradores");
+                                System.out.println("2) Ver médicos");
+                                System.out.println("3) Ver consultorios");
                                 System.out.println("4) Volver");
                                 System.out.print("Seleccione: ");
                                 System.out.println("=======  ===============  ========  ========");
@@ -260,7 +257,7 @@ public class App {
 
                                         break;
                                     case 2:
-                                        System.out.println("Lista de medicos :");
+                                        System.out.println("Lista de médicos :");
                                         mostrarListaMedicos();
 
                                         break;
@@ -272,7 +269,7 @@ public class App {
                                         break;
 
                                     default:
-                                        System.out.println("Ingrese una opcion Valida");
+                                        System.out.println("Ingrese una opción Valida");
                                         break;
                                 }
 
@@ -314,6 +311,7 @@ public class App {
                                 System.out.print("Área (Ej: Gerencia): ");
                                 String areaA = sc.nextLine();
 
+
                               
                                 listaAdmins.add(new Administrador(nomA, edadA, cedA, telA, areaA, 0));
                                 System.out.println("¡Administrador registrado con éxito!");
@@ -322,14 +320,14 @@ public class App {
 
                                 break;
                             case 4:
-                                System.out.println("Ingresa el numero del consultorio");
+                                System.out.println("Ingresa el número del consultorio");
                                 int numConsultorio = sc.nextInt();
                                 sc.nextLine();
 
                                 if (numConsultorio > 0 && numConsultorio <= 11) {
 
                                 } else {
-                                    System.out.println("Error : Solo tenemos 11 Consultorios en el area Metropolitana");
+                                    System.out.println("Error : Solo tenemos 11 Consultorios en el área Metropolitana");
 
                                 }
 
@@ -339,7 +337,7 @@ public class App {
                                 if (pisoConsultorio > 0 && pisoConsultorio <= 5) {
 
                                 } else {
-                                    System.out.println("Numero de piso incorrecto");
+                                    System.out.println("Número de piso incorrecto");
                                     break;
                                 }
 
@@ -348,7 +346,7 @@ public class App {
 
                                 break;
                             case 5:
-                                System.out.println("Gracias por elegirnos Feliz Dia");
+                                System.out.println("Gracias por elegirnos Feliz Día");
                                 break;
 
                             default:
@@ -411,11 +409,12 @@ public class App {
                     } while (option != 3);
 
                     break;
+
                 case 6:
                     System.out.println("Muchas gracias por usar nuestro servicio");
                     break;
                 default:
-                    System.out.println("Error, Opcion invalida");
+                    System.out.println("Error, Opción inválida");
             }
 
         } while (opcion != 6);
